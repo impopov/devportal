@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yno-y+kene*#_%x5w+a6r#jkwr^)(+$2)adh@2o!w=2=94!q%d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "devportal22.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -94,7 +94,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-
 ]
 
 ROOT_URLCONF = 'devportal.urls'
@@ -119,26 +118,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'devportal.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "devportal",
-        "USER": "ivanpopov",
-        "PASSWORD": "Habrahabr22",
-        "HOST": "database-1.czm2fdoeaiyz.eu-central-1.rds.amazonaws.com",
-        "PORT": "5432",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -169,17 +155,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-#ALLOW ALL DOMAINS TO GET API DATA
+# ALLOW ALL DOMAINS TO GET API DATA
 CORS_ALLOW_ALL_ORIGINS = True
-
 
 # EMAIL SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "markbreus7@gmail.com"
-EMAIL_HOST_PASSWORD = "yjqrkxzzolibnqxl"
+EMAIL_HOST_USER = "Your e-mail"
+EMAIL_HOST_PASSWORD = "Your password"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -198,19 +183,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_SIGNATURE_VERSION = "s3v4"
-AWS_S3_REGION_NAME = "eu-central-1"
-AWS_S3_ADDRESSING_STYLE = "virtual"
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_FILE_OVERWRITE = False
-
-AWS_S3_ACCESS_KEY_ID = "AKIA365UHQXVCQLEMKEI"
-AWS_S3_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "devportal22bucket"
-
 
 if os.getcwd() == "/app":
     DEBUG = False
