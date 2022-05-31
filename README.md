@@ -1,4 +1,4 @@
-![devportal](/Users/ivanpopov/Developer/devportal/static/images/Screenshot 2022-05-31 at 5.50.55 PM.png)
+![devportal](/Users/ivanpopov/Developer/devportal/static/images/readme.png)
 
 # Developers portal
 
