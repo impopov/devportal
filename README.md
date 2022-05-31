@@ -1,4 +1,4 @@
-![devportal](/Users/ivanpopov/Developer/devportal/static/images/readme.png)
+![devportal](./static/images/readme.png)
 
 # Developers portal
 
